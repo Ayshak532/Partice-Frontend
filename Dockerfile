@@ -2,6 +2,9 @@ FROM node:20 as build
 
 WORKDIR /app
 
+# ADD THIS LINE 👇
+RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
 COPY . .
 
 # Install Angular CLI
