@@ -11,7 +11,10 @@ RUN npx ng build --configuration production
 
 FROM nginx:alpine
 
-# IMPORTANT FIX 👇
+# 🔥 CLEAN OLD FILES
+RUN rm -rf /usr/share/nginx/html/*
+
+# 🔥 COPY ONLY BROWSER BUILD
 COPY --from=build /app/dist/Partice-Frontend/browser/ /usr/share/nginx/html/
 
 EXPOSE 80
