@@ -11,7 +11,7 @@ RUN npm install -g @angular/cli
 RUN npm install
 
 # Build Angular app
-RUN ng build --configuration production
+RUN npx ng build --configuration production
 
 FROM nginx:alpine
 
