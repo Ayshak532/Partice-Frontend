@@ -6,7 +6,7 @@ RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 COPY . .
 
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli --registry=https://registry.npmjs.org/
 RUN npm install
 
 RUN npx ng build --configuration production
